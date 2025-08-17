@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ajay-bangle-backend
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: USE_ATLAS
+        value: true
+      - key: MONGO_URI_ATLAS
+        sync: false   # You will set this in Render Dashboard
+      - key: PORT
+        value: 10000
